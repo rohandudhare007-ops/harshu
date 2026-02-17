@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry Harshada ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ffeef8 0%, #ffe4f1 25%, #f3e5f5 50%, #e8eaf6 75%, #fff0f5 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            overflow: hidden;
+            position: relative;
+            transition: background 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body.forgiven {
+            background: linear-gradient(135deg, #fff5f8 0%, #ffe8f0 25%, #fef0ff 50%, #f5f0ff 75%, #fff8fa 100%);
+            animation: brightenGradient 2s ease-in-out;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes brightenGradient {
+            0% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+            100% { filter: brightness(1.1); }
+        }
+
+        /* Bokeh lights background */
+        .bokeh-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .bokeh {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 182, 193, 0.4), transparent 70%);
+            animation: floatBokeh 20s infinite ease-in-out;
+        }
+
+        @keyframes floatBokeh {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+            25% { transform: translate(30px, -30px) scale(1.1); opacity: 0.5; }
+            50% { transform: translate(-20px, -60px) scale(0.9); opacity: 0.4; }
+            75% { transform: translate(40px, -40px) scale(1.05); opacity: 0.45; }
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255, 105, 180, 0.6);
+            animation: floatHeart 8s infinite ease-in-out;
+            pointer-events: none;
+            filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.4));
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.7; }
+            90% { opacity: 0.7; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Sparkles */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out;
+            pointer-events: none;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Main card */
+        .card {
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 60px 50px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 8px 32px rgba(255, 105, 180, 0.15),
+                        0 0 60px rgba(186, 104, 200, 0.1),
+                        inset 0 0 80px rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            text-align: center;
+            animation: fadeInCard 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        box-shadow 0.8s ease;
+        }
+
+        .card.forgiven-state {
+            transform: scale(1.05);
+            box-shadow: 0 12px 48px rgba(255, 105, 180, 0.3),
+                        0 0 100px rgba(186, 104, 200, 0.2),
+                        inset 0 0 100px rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes fadeInCard {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #d81b60;
+            margin-bottom: 30px;
+            text-shadow: 0 0 20px rgba(216, 27, 96, 0.3),
+                         0 0 40px rgba(216, 27, 96, 0.1);
+            animation: zoomGlow 2s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        @keyframes zoomGlow {
+            0% { opacity: 0; transform: scale(0.5); text-shadow: 0 0 0 rgba(216, 27, 96, 0); }
+            100% { opacity: 1; transform: scale(1); text-shadow: 0 0 20px rgba(216, 27, 96, 0.3), 0 0 40px rgba(216, 27, 96, 0.1); }
+        }
+
+        .message {
+            font-size: 1.25rem;
+            color: #6a1b9a;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            min-height: 120px;
+            opacity: 0;
+            animation: fadeInMessage 1s cubic-bezier(0.4, 0, 0.2, 1) 1.5s forwards;
+        }
+
+        @keyframes fadeInMessage {
+            to { opacity: 1; }
+        }
+
+        .message::after {
+            content: '|';
+            animation: blink 0.7s infinite;
+            margin-left: 2px;
+        }
+
+        .message.typing-done::after {
+            content: '';
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        button {
+            background: linear-gradient(135deg, #f48fb1 0%, #ec407a 100%);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(244, 143, 177, 0.4);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-family: 'Georgia', serif;
+            letter-spacing: 1px;
+            animation: pulse 2s infinite ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 8px 25px rgba(244, 143, 177, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 12px 35px rgba(244, 143, 177, 0.6); }
+        }
+
+        button:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 40px rgba(244, 143, 177, 0.6);
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        button:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Heart burst animation */
+        .heart-burst {
+            position: absolute;
+            font-size: 24px;
+            color: #f48fb1;
+            pointer-events: none;
+            animation: burstHeart 1s ease-out forwards;
+        }
+
+        @keyframes burstHeart {
+            0% { transform: translate(0, 0) scale(0); opacity: 1; }
+            100% { transform: translate(var(--tx), var(--ty)) scale(1.5); opacity: 0; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .card { padding: 40px 30px; }
+            h1 { font-size: 2.2rem; }
+            .message { font-size: 1.1rem; }
+            button { font-size: 1.1rem; padding: 15px 40px; }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+            .message { font-size: 1rem; min-height: 140px; }
+            button { font-size: 1rem; padding: 12px 35px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Bokeh lights -->
+    <div class="bokeh-container" id="bokehContainer"></div>
+
+    <!-- Main card -->
+    <div class="card" id="card">
+        <h1>I'm Sorry Harshada ❤️</h1>
+        <p class="message" id="message"></p>
+        <button id="forgiveBtn">Forgive Me?</button>
+    </div>
+
+    <script>
+        // Create bokeh lights
+        const bokehContainer = document.getElementById('bokehContainer');
+        for (let i = 0; i < 15; i++) {
+            const bokeh = document.createElement('div');
+            bokeh.className = 'bokeh';
+            bokeh.style.width = `${Math.random() * 100 + 50}px`;
+            bokeh.style.height = bokeh.style.width;
+            bokeh.style.left = `${Math.random() * 100}%`;
+            bokeh.style.top = `${Math.random() * 100}%`;
+            bokeh.style.animationDelay = `${Math.random() * 5}s`;
+            bokeh.style.animationDuration = `${Math.random() * 10 + 15}s`;
+            bokehContainer.appendChild(bokeh);
+        }
+
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.textContent = '❤️';
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.bottom = '-50px';
+            heart.style.animationDuration = `${Math.random() * 4 + 6}s`;
+            heart.style.animationDelay = `${Math.random() * 3}s`;
+            heart.style.fontSize = `${Math.random() * 15 + 15}px`;
+            document.body.appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 10000);
+        }
+
+        setInterval(createHeart, 800);
+
+        // Create sparkles
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = `${Math.random() * 100}%`;
+            sparkle.style.top = `${Math.random() * 100}%`;
+            sparkle.style.animationDelay = `${Math.random() * 2}s`;
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => sparkle.remove(), 3000);
+        }
+
+        setInterval(createSparkle, 300);
+
+        // Typewriter effect
+        const messageElement = document.getElementById('message');
+        const fullMessage = "If my words ever hurt you, it was never my intention. You mean more to me than I can express. Please forgive me, and let me make things right.";
+        let charIndex = 0;
+
+        function typeWriter() {
+            if (charIndex < fullMessage.length) {
+                messageElement.textContent = fullMessage.substring(0, charIndex + 1);
+                charIndex++;
+                setTimeout(typeWriter, 50);
+            } else {
+                messageElement.classList.add('typing-done');
+            }
+        }
+
+        setTimeout(typeWriter, 2000);
+
+        // Forgive button functionality
+        let forgiven = false;
+        const forgiveBtn = document.getElementById('forgiveBtn');
+        const card = document.getElementById('card');
+
+        forgiveBtn.addEventListener('click', function(e) {
+            if (forgiven) return;
+            forgiven = true;
+
+            // Change card state
+            card.classList.add('forgiven-state');
+            document.body.classList.add('forgiven');
+
+            // Change message
+            messageElement.classList.remove('typing-done');
+            messageElement.textContent = "Thank you for giving me another chance 💖";
+            messageElement.style.opacity = '1';
+
+            // Hide button
+            forgiveBtn.style.opacity = '0';
+            forgiveBtn.style.transform = 'scale(0.8)';
+            setTimeout(() => {
+                forgiveBtn.style.display = 'none';
+            }, 400);
+
+            // Create heart burst
+            const rect = card.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const burstHeart = document.createElement('div');
+                    burstHeart.className = 'heart-burst';
+                    burstHeart.textContent = '💖';
+                    burstHeart.style.left = `${centerX}px`;
+                    burstHeart.style.top = `${centerY}px`;
+                    
+                    const angle = (Math.PI * 2 * i) / 20;
+                    const distance = 150;
+                    const tx = Math.cos(angle) * distance;
+                    const ty = Math.sin(angle) * distance;
+                    
+                    burstHeart.style.setProperty('--tx', `${tx}px`);
+                    burstHeart.style.setProperty('--ty', `${ty}px`);
+                    
+                    document.body.appendChild(burstHeart);
+                    
+                    setTimeout(() => burstHeart.remove(), 1000);
+                }, i * 50);
+            }
+
+            // Extra floating hearts
+            for (let i = 0; i < 30; i++) {
+                setTimeout(createHeart, i * 100);
+            }
+        });
+    </script>
+</body>
+</html>
